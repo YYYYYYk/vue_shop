@@ -66,7 +66,7 @@ export default {
       //   登录前的表单预验证
       this.$refs.loginFormRef.validate(async valid => {
         if (!valid) return;
-        const { data: res } = await this.$http.post("login", this.loginForm);
+        const { data: res } = await this.$http.post("login", this.loginForm);//解构赋值给res
         if (res.meta.status !== 200) {
           this.$message.error("登录失败");
         } else {

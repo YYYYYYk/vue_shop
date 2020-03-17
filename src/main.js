@@ -8,7 +8,8 @@ import '../src/assets/css/global.css'
 import '../src/assets/fonts/iconfont.css'
 // 导入axios
 import axios from 'axios'
-
+//导入树形UI
+import ZkTable from 'vue-table-with-tree-grid'
 
 //配置请求的根路径
 axios.defaults.baseURL='http://47.115.124.102:8888/api/private/v1/'
@@ -21,6 +22,8 @@ axios.interceptors.request.use(config => {
 })
 Vue.prototype.$http=axios
 Vue.config.productionTip = false
+//全局注册
+Vue.component('tree-table',ZkTable) 
 
 new Vue({
   router,

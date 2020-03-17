@@ -1,7 +1,7 @@
 import Vue from 'vue'
 //注意Message弹框提示组件（这个是全局挂载）
 import {Button,form,FormItem,input,Message,Container,Header,Aside,Main,Menu,MenuItem,Submenu,Breadcrumb,BreadcrumbItem,
-        Card,Row,Col,Table,TableColumn,Switch,Tooltip,Pagination,Dialog,MessageBox,Tag,Tree,Select,Option} from 'element-ui'
+        Card,Row,Col,Table,TableColumn,Switch,Tooltip,Pagination,Dialog,MessageBox,Tag,Tree,Select,Option,Cascader} from 'element-ui'
 
 Vue.use(Button)
 Vue.use(form)
@@ -29,6 +29,7 @@ Vue.use(Tag)
 Vue.use(Tree)
 Vue.use(Select)
 Vue.use(Option)
+Vue.use(Cascader)
 //这样就可通过this访问到$message
 Vue.prototype.$message=Message
 Vue.prototype.$confirm=MessageBox.confirm

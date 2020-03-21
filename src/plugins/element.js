@@ -2,7 +2,7 @@ import Vue from 'vue'
 //注意Message弹框提示组件（这个是全局挂载）
 import {Button,form,FormItem,input,Message,Container,Header,Aside,Main,Menu,MenuItem,Submenu,Breadcrumb,BreadcrumbItem,
         Card,Row,Col,Table,TableColumn,Switch,Tooltip,Pagination,Dialog,MessageBox,Tag,Tree,Select,Option,Cascader,Alert,
-        Tabs,TabPane,Steps,Step,CheckboxGroup,checkbox,Upload} from 'element-ui'
+        Tabs,TabPane,Steps,Step,CheckboxGroup,checkbox,Upload,Timeline,TimelineItem} from 'element-ui'
 
 Vue.use(Button)
 Vue.use(form)
@@ -39,6 +39,8 @@ Vue.use(Step)
 Vue.use(CheckboxGroup)
 Vue.use(checkbox)
 Vue.use(Upload)
+Vue.use(Timeline)
+Vue.use(TimelineItem)
 //这样就可通过this访问到$message
 Vue.prototype.$message=Message
 Vue.prototype.$confirm=MessageBox.confirm

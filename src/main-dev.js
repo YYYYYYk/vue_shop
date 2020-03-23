@@ -8,6 +8,9 @@ import '../src/assets/css/global.css'
 import '../src/assets/fonts/iconfont.css'
 // 导入axios
 import axios from 'axios'
+//导入进度条加载样式
+import NProgress from 'nprogress'
+import 'nprogress/nprogress.css'
 //导入依赖中的插件
 import TreeTable from 'vue-table-with-tree-grid'
 //导入副文本编辑器及样式
@@ -21,12 +24,18 @@ import 'quill/dist/quill.bubble.css' // for bubble theme
 
 //配置请求的根路径
 axios.defaults.baseURL='http://47.115.124.102:8888/api/private/v1/'
-//设置请求拦截器
+//设置request拦截器，请求时显示进度条
 axios.interceptors.request.use(config => {
+  NProgress.start()
   config.headers.Authorization = window.sessionStorage.getItem('token') //设置响应头
   return config
 }, err => {
   console.log(err)
+})
+//在response拦截器中，响应时隐藏进度条
+axios.interceptors.response.use(config=>{
+  NProgress.done()
+  return config
 })
 Vue.prototype.$http=axios
 Vue.config.productionTip = false
